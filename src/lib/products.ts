@@ -1,0 +1,188 @@
+import { Product } from "./types";
+
+export const products: Product[] = [
+  {
+    slug: "jean-droit-bleu-clair",
+    name: "Jean Droit Homme Bleu Clair – Coupe Moderne",
+    price: 64.90,
+    category: "Jeans Homme",
+    badge: "BESTSELLER",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: [
+      "/products/jean-1-a.avif",
+      "/products/jean-1-b.jpg",
+      "/products/jean-1-c.jpg",
+    ],
+    description: "Ce jean bleu clair revisite un grand classique avec une coupe moderne et un confort optimal. Idéal pour un look propre et tendance, il s'adapte à toutes les occasions.",
+    details: {
+      coupe: "Droite / fuselée",
+      matiere: "Denim (coton + polyester + viscose)",
+      elasticite: "Non extensible",
+      fermeture: "Zip",
+      longueur: "Cheville",
+      epaisseur: "Moyenne (toutes saisons)",
+    },
+    styleWith: ["Sneakers blanches", "Hoodie", "Veste légère"],
+  },
+  {
+    slug: "jean-slim-vintage-delave",
+    name: "Jean Slim Homme Vintage Délavé – Coupe Moderne",
+    price: 74.90,
+    category: "Jeans Homme",
+    badge: "NOUVEAU",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: [
+      "/products/jean-2-a.webp",
+      "/products/jean-2-b.webp",
+    ],
+    description: "Jean slim délavé effet vintage, coupe moderne qui s'ajuste parfaitement à la silhouette. Un essentiel du dressing masculin.",
+    details: {
+      coupe: "Slim",
+      matiere: "Denim stretch",
+      elasticite: "Légèrement extensible",
+      fermeture: "Zip",
+      longueur: "Cheville",
+      epaisseur: "Moyenne",
+    },
+    styleWith: ["T-shirt blanc", "Bomber", "Chelsea boots"],
+  },
+  {
+    slug: "jean-slim-denim-nouvelle-collection",
+    name: "Jean Slim Denim – Nouvelle Collection",
+    price: 79.90,
+    category: "Jeans Homme",
+    badge: "NOUVEAU",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: [
+      "/products/jean-3-a.jpg",
+      "/products/jean-3-b.jpg",
+    ],
+    description: "Le slim denim de la nouvelle collection 2026. Coupe ajustée, tissu premium, finitions soignées. Parfait pour une allure urbaine et moderne.",
+    details: {
+      coupe: "Slim",
+      matiere: "Denim 98% coton",
+      elasticite: "Non extensible",
+      fermeture: "Zip",
+      longueur: "Cheville",
+      epaisseur: "Légère",
+    },
+    styleWith: ["Chemise oversize", "Sneakers", "Casquette"],
+  },
+  {
+    slug: "jean-ample-streetwear-coreen",
+    name: "Jean Ample Homme – Coupe Large Streetwear Coréen",
+    price: 94.90,
+    category: "Jeans Homme",
+    badge: null,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    images: [
+      "/products/jean-4-a.webp",
+      "/products/jean-4-b.webp",
+    ],
+    description: "Inspiré du streetwear coréen, ce jean ample offre une coupe large et confortable. Style urbain assumé, parfait pour les looks baggy.",
+    details: {
+      coupe: "Large / Baggy",
+      matiere: "Denim lourd",
+      elasticite: "Non extensible",
+      fermeture: "Zip",
+      longueur: "Cheville / Sol",
+      epaisseur: "Épaisse",
+    },
+    styleWith: ["Hoodie oversize", "Jordan", "Bonnet"],
+  },
+  {
+    slug: "jean-dechire-ample-streetwear",
+    name: "Jean Déchiré Ample Homme – Style Streetwear",
+    price: 99.90,
+    category: "Jeans Homme",
+    badge: null,
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "/products/jean-5-a.jpg",
+      "/products/jean-5-b.jpg",
+    ],
+    description: "Jean ample avec déchirures aux genoux, style streetwear brut et authentique. Pour ceux qui assument leur style sans compromis.",
+    details: {
+      coupe: "Large / Ample",
+      matiere: "Denim délavé",
+      elasticite: "Non extensible",
+      fermeture: "Zip",
+      longueur: "Cheville",
+      epaisseur: "Moyenne",
+    },
+    styleWith: ["Tee oversize", "Air Force 1", "Chains"],
+  },
+  {
+    slug: "jean-cargo-baggy",
+    name: "Jean Cargo Baggy Homme – Coupe Large",
+    price: 119.90,
+    category: "Jeans Homme",
+    badge: "PREMIUM",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    images: [
+      "/products/jean-6-a.jpg",
+      "/products/jean-6-b.jpg",
+    ],
+    description: "Jean cargo baggy avec poches latérales utilitaires. Le mix parfait entre fonctionnalité et style urbain. Coupe large et décontractée.",
+    details: {
+      coupe: "Cargo / Baggy",
+      matiere: "Denim renforcé",
+      elasticite: "Non extensible",
+      fermeture: "Zip + bouton",
+      longueur: "Cheville",
+      epaisseur: "Épaisse (hiver/mi-saison)",
+    },
+    styleWith: ["Jacket militaire", "Boots", "Tee basique"],
+  },
+  {
+    slug: "jean-slim-droit-gris",
+    name: "Jean Slim Droit Homme Gris – Coupe Moderne",
+    price: 124.90,
+    category: "Jeans Homme",
+    badge: "PREMIUM",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: [
+      "/products/jean-7-a.avif",
+    ],
+    description: "Jean slim droit gris anthracite, coupe moderne et élégante. Parfait pour un look urbain soigné qui sort de l'ordinaire du bleu classique.",
+    details: {
+      coupe: "Slim droit",
+      matiere: "Denim gris premium",
+      elasticite: "Légèrement extensible",
+      fermeture: "Zip",
+      longueur: "Cheville",
+      epaisseur: "Moyenne",
+    },
+    styleWith: ["Blazer", "Mocassins", "Col roulé"],
+  },
+  {
+    slug: "jean-droit-noir-confort",
+    name: "Jean Droit Homme Noir – Coupe Confort",
+    price: 134.90,
+    category: "Jeans Homme",
+    badge: "PREMIUM",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    images: [
+      "/products/jean-8-a.jpg",
+      "/products/jean-8-b.jpg",
+    ],
+    description: "Le jean noir intemporel en coupe droite confort. Matière haut de gamme, tombé impeccable. La pièce maîtresse d'un dressing masculin moderne.",
+    details: {
+      coupe: "Droite confort",
+      matiere: "Denim noir premium",
+      elasticite: "Légèrement extensible",
+      fermeture: "Zip",
+      longueur: "Cheville",
+      epaisseur: "Moyenne-épaisse",
+    },
+    styleWith: ["Tout — c'est le jean noir", "Chemise blanche", "Boots Chelsea"],
+  },
+];
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getSimilarProducts(slug: string, count = 4): Product[] {
+  return products.filter((p) => p.slug !== slug).slice(0, count);
+}

@@ -87,22 +87,39 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Menu mobile */}
-        {menuOpen && (
-          <div className="lg:hidden bg-white border-t border-[#E4DDD4] px-6 py-4">
-            {[...navLeft, ...navRight].map((l) => (
-              <Link
-                key={l.label}
-                href={l.href}
-                onClick={() => setMenuOpen(false)}
-                className="block py-3.5 text-[11px] font-medium tracking-[0.15em] uppercase text-[#6B6560] hover:text-[#0d0d0d] border-b border-[#F0EBE4] last:border-0"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
-        )}
       </header>
+
+      {/* Menu mobile — overlay plein écran */}
+      <div
+        className={`fixed inset-0 z-50 bg-white flex flex-col lg:hidden transition-opacity duration-200 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex items-center justify-between px-6 h-[calc(36px+64px)] border-b border-[#E4DDD4]">
+          <Link
+            href="/"
+            className="text-[14px] font-black tracking-[0.25em] uppercase text-[#0d0d0d]"
+            onClick={() => setMenuOpen(false)}
+          >
+            Cocon Animal
+          </Link>
+          <button onClick={() => setMenuOpen(false)} className="text-[#0d0d0d]">
+            <X size={20} strokeWidth={1.5} />
+          </button>
+        </div>
+        <nav className="flex-1 px-6 py-6 overflow-y-auto">
+          {[...navLeft, ...navRight].map((l) => (
+            <Link
+              key={l.label}
+              href={l.href}
+              onClick={() => setMenuOpen(false)}
+              className="block py-5 text-[13px] font-semibold tracking-[0.2em] uppercase text-[#0d0d0d] border-b border-[#F0EBE4] last:border-0"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
 
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
     </>

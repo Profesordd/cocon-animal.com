@@ -46,8 +46,8 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
           ) : (
             items.map((item) => (
               <div key={`${item.productSlug}-${item.size}`} className="flex gap-4 pb-5 border-b border-[#F0EBE4] last:border-0">
-                <div className="relative w-16 h-16 bg-[#F8F5F0] flex-shrink-0">
-                  <Image src={item.image} alt={item.name} fill className="object-contain p-1.5" unoptimized />
+                <div className="relative w-16 h-16 bg-white overflow-hidden flex-shrink-0">
+                  <Image src={item.image} alt={item.name} fill className="object-cover" unoptimized />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[#0d0d0d] text-[12px] font-medium line-clamp-2 leading-snug">{item.name}</p>

@@ -13,9 +13,9 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "COCON ANIMAL — Accessoires & Bien-être pour Animaux",
+  title: "Cocon Animal — Accessoires Haut de Gamme pour Chats & Chiens",
   description:
-    "Accessoires premium pour chats et chiens. Livraison gratuite en France. Tout ce qu'il faut pour le bonheur de votre compagnon.",
+    "Accessoires de luxe pour chats et chiens. Arbres à chats, fontaines filtrantes, harnais premium. Livraison gratuite en France.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

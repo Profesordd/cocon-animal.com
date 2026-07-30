@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronRight, ShoppingCart, Check, Ruler,
-  Truck, RotateCcw, Shield, ChevronDown,
+  Truck, RotateCcw, Shield, ChevronDown, ArrowRight,
 } from "lucide-react";
 import { getProductBySlug, getSimilarProducts } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
@@ -15,47 +15,49 @@ import ProductCard from "@/components/ui/ProductCard";
 const productFaq = [
   {
     q: "Quels sont les délais de livraison ?",
-    a: "Votre commande est expédiée sous 24-48h. La livraison en France métropolitaine prend 5 à 7 jours ouvrés via La Poste.",
+    a: "Votre commande est expédiée sous 24–48h. La livraison en France métropolitaine prend 5 à 7 jours ouvrés.",
   },
   {
     q: "Comment choisir la bonne taille pour mon animal ?",
-    a: "Référez-vous au guide des dimensions dans la fiche produit (poids et mensurations de votre animal). En cas de doute, choisissez la taille supérieure pour un confort optimal.",
+    a: "Référez-vous aux dimensions dans la fiche produit. En cas de doute, choisissez la taille supérieure pour un confort optimal.",
   },
   {
     q: "Puis-je retourner l'article s'il ne convient pas ?",
-    a: "Oui, vous disposez de 30 jours pour retourner votre article. Les frais de retour sont entièrement pris en charge par Cocon Animal.",
+    a: "Oui, vous disposez de 30 jours pour retourner votre article. Les frais de retour sont intégralement pris en charge par Cocon Animal.",
   },
   {
     q: "Les matériaux sont-ils sécurisés pour mon animal ?",
-    a: "Tous nos produits sont testés et conformes aux normes de sécurité européennes. Les matériaux sont non toxiques et adaptés à un contact quotidien avec les animaux.",
+    a: "Tous nos produits sont conformes aux normes de sécurité européennes. Les matériaux sont non toxiques et adaptés à un contact quotidien.",
   },
 ];
 
 function FAQItem({ item }: { item: { q: string; a: string } }) {
   const [open, setOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   return (
-    <div className="border-b border-gray-100 last:border-0">
+    <div className="border-b border-[#E4DDD4] last:border-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-3.5 text-left hover:bg-gray-50 px-1 transition-colors"
+        className="w-full flex items-center justify-between py-4 text-left px-0 transition-colors group"
       >
-        <span className="text-gray-800 text-sm font-medium pr-4">{item.q}</span>
-        <ChevronDown size={15} className={`text-gray-400 flex-shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+        <span className="text-[#0d0d0d] text-sm font-medium pr-4 group-hover:opacity-60 transition-opacity">{item.q}</span>
+        <ChevronDown size={14} strokeWidth={1.5} className={`text-[#9A9591] flex-shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
       <div
-        ref={contentRef}
-        style={{
-          height: open ? (contentRef.current?.scrollHeight ?? "auto") : 0,
-          overflow: "hidden",
-          transition: "height 0.3s ease",
-        }}
+        ref={ref}
+        style={{ height: open ? (ref.current?.scrollHeight ?? "auto") : 0, overflow: "hidden", transition: "height 0.3s ease" }}
       >
-        <p className="px-1 pb-3.5 text-gray-500 text-sm leading-relaxed">{item.a}</p>
+        <p className="pb-4 text-[#7A746C] text-sm leading-relaxed">{item.a}</p>
       </div>
     </div>
   );
 }
+
+const badgeStyle: Record<string, string> = {
+  BESTSELLER: "bg-[#B8933F] text-white",
+  NOUVEAU:    "bg-white text-[#0d0d0d] border border-[#0d0d0d]",
+  EXCLUSIF:   "bg-[#0d0d0d] text-white",
+};
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug);
@@ -70,9 +72,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   if (!product) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <p className="text-gray-500 mb-4">Produit introuvable.</p>
-        <Link href="/boutique" className="text-gray-900 underline text-sm">← Retour boutique</Link>
+      <div className="max-w-7xl mx-auto px-6 py-24 text-center">
+        <p className="text-[#9A9591] mb-4 text-sm">Produit introuvable.</p>
+        <Link href="/boutique" className="text-[#0d0d0d] text-sm font-medium underline underline-offset-4">← Retour boutique</Link>
       </div>
     );
   }
@@ -94,36 +96,31 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     setTimeout(() => setAdded(false), 2500);
   };
 
-  const badgeStyle: Record<string, string> = {
-    BESTSELLER: "bg-orange-500 text-white",
-    NOUVEAU:    "bg-blue-600 text-white",
-    PREMIUM:    "bg-gray-900 text-white",
-  };
-
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-6 py-10">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-1.5 text-xs text-gray-400 mb-6">
-        <Link href="/" className="hover:text-gray-700">Accueil</Link>
-        <ChevronRight size={11} />
-        <Link href="/boutique" className="hover:text-gray-700">Boutique</Link>
-        <ChevronRight size={11} />
-        <span className="text-gray-700 font-medium line-clamp-1">{product.name}</span>
+      <nav className="flex items-center gap-1.5 text-[10px] tracking-wide text-[#9A9591] mb-10">
+        <Link href="/" className="hover:text-[#0d0d0d] transition-colors">Accueil</Link>
+        <ChevronRight size={10} />
+        <Link href="/boutique" className="hover:text-[#0d0d0d] transition-colors">Boutique</Link>
+        <ChevronRight size={10} />
+        <span className="text-[#0d0d0d] font-medium line-clamp-1">{product.name}</span>
       </nav>
 
-      <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+      <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
         {/* ── Galerie ── */}
-        <div className="space-y-2">
-          <div className="relative bg-gray-50 rounded-lg overflow-hidden" style={{ aspectRatio: "3/4" }}>
+        <div className="space-y-3">
+          <div className="relative bg-[#F8F5F0] overflow-hidden" style={{ aspectRatio: "1/1" }}>
             <Image
               src={product.images[activeImg]}
               alt={product.name}
               fill
-              className="object-cover"
+              className="object-contain p-8"
               priority
+              unoptimized
             />
             {product.badge && (
-              <span className={`absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded ${badgeStyle[product.badge] ?? "bg-gray-800 text-white"}`}>
+              <span className={`absolute top-4 left-4 text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 ${badgeStyle[product.badge] ?? "bg-[#0d0d0d] text-white"}`}>
                 {product.badge}
               </span>
             )}
@@ -134,9 +131,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <button
                   key={i}
                   onClick={() => setActiveImg(i)}
-                  className={`relative w-20 h-24 flex-shrink-0 rounded overflow-hidden border-2 transition-colors ${activeImg === i ? "border-gray-900" : "border-transparent hover:border-gray-300"}`}
+                  className={`relative w-20 h-20 flex-shrink-0 bg-[#F8F5F0] border-2 transition-colors ${activeImg === i ? "border-[#0d0d0d]" : "border-transparent hover:border-[#E4DDD4]"}`}
                 >
-                  <Image src={img} alt="" fill className="object-cover" />
+                  <Image src={img} alt="" fill className="object-contain p-2" unoptimized />
                 </button>
               ))}
             </div>
@@ -145,62 +142,69 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* ── Infos ── */}
         <div>
-          <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">{product.category}</p>
-          <h1 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-4">
+          <p className="text-[9px] font-semibold tracking-[0.25em] uppercase text-[#B8933F] mb-3">
+            {product.category}
+          </p>
+          <h1 className="text-[clamp(1.3rem,3vw,1.9rem)] font-black text-[#0d0d0d] leading-snug mb-4">
             {product.name}
           </h1>
 
-          <p className="text-3xl font-black text-gray-900 mb-6">{product.price.toFixed(2)} €</p>
+          <p className="text-[2rem] font-black text-[#0d0d0d] mb-7">{product.price.toFixed(2)} €</p>
 
           {/* Taille */}
-          <div className="mb-5">
-            <div className="flex items-center justify-between mb-2">
-              <p className="text-sm font-semibold text-gray-900">
-                Taille{selectedSize && <span className="text-blue-600 ml-1">: {selectedSize}</span>}
+          <div className="mb-6">
+            <div className="flex items-center justify-between mb-2.5">
+              <p className="text-[11px] font-semibold tracking-[0.12em] uppercase text-[#0d0d0d]">
+                Taille{selectedSize && <span className="text-[#B8933F] ml-1">— {selectedSize}</span>}
               </p>
-              <button className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-700">
-                <Ruler size={12} /> Guide des tailles
+              <button className="flex items-center gap-1 text-[10px] text-[#9A9591] hover:text-[#0d0d0d] transition-colors tracking-wide">
+                <Ruler size={11} strokeWidth={1.5} /> Guide des tailles
               </button>
             </div>
             <SizeSelector sizes={product.sizes} selected={selectedSize} onSelect={setSelectedSize} />
-            {sizeError && <p className="text-red-500 text-xs mt-2">Veuillez sélectionner une taille.</p>}
+            {sizeError && <p className="text-red-500 text-[11px] mt-2 tracking-wide">Veuillez sélectionner une taille.</p>}
           </div>
 
           {/* Bouton panier */}
           <button
             onClick={handleAdd}
-            className={`w-full py-4 flex items-center justify-center gap-2 font-bold text-sm rounded transition-colors duration-200 ${
-              added ? "bg-green-600 text-white" : "bg-gray-900 text-white hover:bg-gray-700"
+            className={`w-full py-4 flex items-center justify-center gap-2.5 font-bold text-[11px] tracking-[0.2em] uppercase transition-colors duration-200 ${
+              added
+                ? "bg-[#2D6A3F] text-white"
+                : "bg-[#0d0d0d] text-white hover:opacity-75"
             }`}
           >
-            {added ? <><Check size={16} /> Ajouté au panier</> : <><ShoppingCart size={16} /> Ajouter au panier</>}
+            {added
+              ? <><Check size={15} /> Ajouté au panier</>
+              : <><ShoppingCart size={15} strokeWidth={1.5} /> Ajouter au panier</>
+            }
           </button>
 
           {/* Réassurance */}
           <div className="grid grid-cols-3 gap-2 mt-4">
             {[
-              { icon: <Truck size={14} />, label: "Livraison gratuite" },
-              { icon: <RotateCcw size={14} />, label: "Retour 30j" },
-              { icon: <Shield size={14} />, label: "Paiement sécurisé" },
+              { icon: <Truck size={13} strokeWidth={1.5} />, label: "Livraison gratuite" },
+              { icon: <RotateCcw size={13} strokeWidth={1.5} />, label: "Retour 30j" },
+              { icon: <Shield size={13} strokeWidth={1.5} />, label: "Paiement sécurisé" },
             ].map((item) => (
-              <div key={item.label} className="bg-gray-50 rounded p-2.5 border border-gray-100 text-center">
-                <div className="flex justify-center text-gray-400 mb-1">{item.icon}</div>
-                <p className="text-gray-500 text-[10px]">{item.label}</p>
+              <div key={item.label} className="bg-[#F8F5F0] border border-[#E4DDD4] p-3 text-center">
+                <div className="flex justify-center text-[#B8933F] mb-1">{item.icon}</div>
+                <p className="text-[#7A746C] text-[9px] tracking-[0.1em] uppercase font-medium">{item.label}</p>
               </div>
             ))}
           </div>
 
-          {/* Tabs description / caractéristiques */}
-          <div className="mt-8">
-            <div className="flex border-b border-gray-100 mb-4">
+          {/* Tabs */}
+          <div className="mt-9">
+            <div className="flex border-b border-[#E4DDD4] mb-5">
               {(["description", "caracteristiques"] as const).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-4 py-2.5 text-sm font-medium transition-colors ${
+                  className={`px-5 py-3 text-[10px] font-semibold tracking-[0.15em] uppercase transition-colors ${
                     activeTab === tab
-                      ? "text-gray-900 border-b-2 border-gray-900 -mb-px"
-                      : "text-gray-400 hover:text-gray-700"
+                      ? "text-[#0d0d0d] border-b-2 border-[#0d0d0d] -mb-px"
+                      : "text-[#9A9591] hover:text-[#0d0d0d]"
                   }`}
                 >
                   {tab === "description" ? "Description" : "Caractéristiques"}
@@ -208,14 +212,14 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               ))}
             </div>
             {activeTab === "description" ? (
-              <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+              <p className="text-[#7A746C] text-sm leading-relaxed">{product.description}</p>
             ) : (
               <table className="w-full text-sm">
-                <tbody className="divide-y divide-gray-50">
+                <tbody className="divide-y divide-[#F0EBE4]">
                   {Object.entries(product.details).map(([k, v]) => (
                     <tr key={k}>
-                      <td className="py-2.5 text-gray-500 capitalize w-2/5">{k}</td>
-                      <td className="py-2.5 text-gray-900 font-medium">{v}</td>
+                      <td className="py-3 text-[#9A9591] capitalize w-2/5 text-[11px] tracking-wide">{k.replace(/_/g, " ")}</td>
+                      <td className="py-3 text-[#0d0d0d] font-medium text-[12px]">{v}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -224,33 +228,39 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* À associer avec */}
-          <div className="mt-6 bg-gray-50 rounded-lg p-4 border border-gray-100">
-            <p className="text-xs font-semibold text-gray-900 uppercase tracking-wide mb-3">À associer avec</p>
+          <div className="mt-7 bg-[#F8F5F0] border border-[#E4DDD4] p-5">
+            <p className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#0d0d0d] mb-3">À associer avec</p>
             <div className="flex flex-wrap gap-2">
               {product.styleWith.map((item) => (
-                <span key={item} className="bg-white border border-gray-200 text-gray-600 text-xs px-3 py-1 rounded-full">
+                <span key={item} className="border border-[#E4DDD4] bg-white text-[#7A746C] text-[10px] px-3 py-1.5 tracking-wide">
                   {item}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* FAQ produit */}
-          <div className="mt-8">
-            <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-3">Questions fréquentes</h3>
-            <div className="border border-gray-100 rounded-lg overflow-hidden divide-y divide-gray-100">
-              {productFaq.map((item, i) => (
-                <FAQItem key={i} item={item} />
-              ))}
-            </div>
+          {/* FAQ */}
+          <div className="mt-8 border-t border-[#E4DDD4] pt-6">
+            <h3 className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#0d0d0d] mb-4">Questions fréquentes</h3>
+            {productFaq.map((item, i) => (
+              <FAQItem key={i} item={item} />
+            ))}
           </div>
         </div>
       </div>
 
       {/* Produits similaires */}
-      <div className="mt-16 pt-10 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Vous aimerez aussi</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="mt-20 pt-12 border-t border-[#E4DDD4]">
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8933F] mb-2">Vous aimerez aussi</p>
+            <h2 className="text-xl font-black text-[#0d0d0d]">Produits similaires</h2>
+          </div>
+          <Link href="/boutique" className="hidden md:flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase font-semibold text-[#7A746C] hover:text-[#0d0d0d] transition-colors">
+            Tout voir <ArrowRight size={12} />
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-8">
           {similar.map((p) => <ProductCard key={p.slug} product={p} />)}
         </div>
       </div>

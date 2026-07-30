@@ -110,12 +110,12 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
         {/* ── Galerie ── */}
         <div className="space-y-3">
-          <div className="relative bg-[#F8F5F0] overflow-hidden" style={{ aspectRatio: "1/1" }}>
+          <div className="relative bg-white overflow-hidden" style={{ aspectRatio: "1/1" }}>
             <Image
               src={product.images[activeImg]}
               alt={product.name}
               fill
-              className="object-contain p-8"
+              className="object-cover"
               priority
               unoptimized
             />
@@ -131,9 +131,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <button
                   key={i}
                   onClick={() => setActiveImg(i)}
-                  className={`relative w-20 h-20 flex-shrink-0 bg-[#F8F5F0] border-2 transition-colors ${activeImg === i ? "border-[#0d0d0d]" : "border-transparent hover:border-[#E4DDD4]"}`}
+                  className={`relative w-20 h-20 flex-shrink-0 bg-white border-2 overflow-hidden transition-colors ${activeImg === i ? "border-[#0d0d0d]" : "border-transparent hover:border-[#E4DDD4]"}`}
                 >
-                  <Image src={img} alt="" fill className="object-contain p-2" unoptimized />
+                  <Image src={img} alt="" fill className="object-cover" unoptimized />
                 </button>
               ))}
             </div>

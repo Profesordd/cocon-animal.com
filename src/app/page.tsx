@@ -141,7 +141,7 @@ export default function HomePage() {
                 {confortProducts.slice(0, 2).map((p) => (
                   <Link key={p.slug} href={`/produit/${p.slug}`} className="group">
                     <div className="relative aspect-square bg-white overflow-hidden mb-2">
-                      <Image src={p.images[0]} alt={p.name} fill className="object-contain p-3 group-hover:scale-105 transition-transform duration-500" unoptimized />
+                      <Image src={p.images[0]} alt={p.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
                     </div>
                     <p className="text-[11px] font-semibold text-[#0d0d0d] line-clamp-1 tracking-wide">{p.name}</p>
                     <p className="text-[11px] text-[#7A746C]">{p.price.toFixed(2)} €</p>
@@ -175,8 +175,8 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {jeuxProducts.slice(0, 2).map((p) => (
                   <Link key={p.slug} href={`/produit/${p.slug}`} className="group">
-                    <div className="relative aspect-square bg-[#F8F5F0] overflow-hidden mb-2">
-                      <Image src={p.images[0]} alt={p.name} fill className="object-contain p-3 group-hover:scale-105 transition-transform duration-500" unoptimized />
+                    <div className="relative aspect-square bg-white overflow-hidden mb-2">
+                      <Image src={p.images[0]} alt={p.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
                     </div>
                     <p className="text-[11px] font-semibold text-[#0d0d0d] line-clamp-1 tracking-wide">{p.name}</p>
                     <p className="text-[11px] text-[#7A746C]">{p.price.toFixed(2)} €</p>
@@ -227,7 +227,7 @@ export default function HomePage() {
                 {quotidienProducts.slice(0, 2).map((p) => (
                   <Link key={p.slug} href={`/produit/${p.slug}`} className="group">
                     <div className="relative aspect-square bg-white overflow-hidden mb-2">
-                      <Image src={p.images[0]} alt={p.name} fill className="object-contain p-3 group-hover:scale-105 transition-transform duration-500" unoptimized />
+                      <Image src={p.images[0]} alt={p.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
                     </div>
                     <p className="text-[11px] font-semibold text-[#0d0d0d] line-clamp-1 tracking-wide">{p.name}</p>
                     <p className="text-[11px] text-[#7A746C]">{p.price.toFixed(2)} €</p>

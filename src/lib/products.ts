@@ -15,8 +15,8 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     images: [
       DC("2019/04/dog-bed-classic-graphite-bowlandbonerepublic-l1-600x534.webp"),
+      DC("2019/04/dog-bed-classic-graphite-bowlandbonerepublic-l1-600x534.webp"),
       PX(866496),
-      PX(5240579),
     ],
     description: "Le panier Classic de Bowl & Bone Republic est un incontournable du design pour chien. Fabriqué à la main en Pologne, son tissu graphite ultra-résistant et sa doublure polaire moelleuse offrent un confort haut de gamme. Un objet de décoration autant qu'un nid douillet.",
     details: {
@@ -39,8 +39,8 @@ export const products: Product[] = [
     sizes: ["S", "M", "L"],
     images: [
       DC("2015/02/Covooooo-600x600.webp"),
+      DC("2015/02/Covooooo-600x600.webp"),
       PX(7725967),
-      PX(16168081),
     ],
     description: "Le COVO de Miacara est un canapé-lit pour chien qui redéfinit le luxe. Structure en bois laqué blanc, coussin central en polyester recyclé ultra-doux, bolsters latéraux. Ce meuble design s'intègre dans les intérieurs les plus exigeants et devient le lieu de vie préféré de votre chien.",
     details: {
@@ -63,7 +63,7 @@ export const products: Product[] = [
     sizes: ["S", "M", "L"],
     images: [
       DC("2022/06/lit-design-chat-chien-feutre-laine-naturelle-3.jpg"),
-      PX(271611),
+      DC("2022/06/lit-design-chat-chien-feutre-laine-naturelle-3.jpg"),
       PX(866496),
     ],
     description: "Le panier SIMONE de Mishum est façonné en feutre de laine naturelle, 100% biodégradable. Sa forme arrondie et ses parois épaisses créent un cocon chaud et sécurisant pour chats et petits chiens. Chaque pièce est unique, fabriquée à la main par des artisans.",
@@ -87,8 +87,8 @@ export const products: Product[] = [
     sizes: ["S", "M", "L"],
     images: [
       DC("2021/12/LABBVENN-TOSSE2.jpg"),
+      DC("2021/12/LABBVENN-TOSSE2.jpg"),
       PX(866496),
-      PX(6853522),
     ],
     description: "La couverture TÖSSE de Labbvenn est une pièce de confort ultime, en imitation fourrure d'une douceur incomparable. Réversible, ultra-moelleuse, elle s'installe sur un canapé, un panier ou directement au sol. Votre animal ne voudra plus la quitter.",
     details: {
@@ -125,7 +125,7 @@ export const products: Product[] = [
       entretien: "Essuyage chiffon sec",
       garantie: "3 mois",
     },
-    styleWith: ["Panier SIMONE", "Panier SENSO"],
+    styleWith: ["Panier SIMONE", "Nid Panier COCO"],
   },
   {
     slug: "balle-distributrice",
@@ -185,8 +185,8 @@ export const products: Product[] = [
     sizes: ["S", "M"],
     images: [
       DC("2021/08/coco-chien-labbvenn-1.jpg"),
+      DC("2021/08/coco-chien-labbvenn-1.jpg"),
       PX(1340376),
-      PX(6853522),
     ],
     description: "Le panier COCO de Labbvenn est un nid cocon à la fois espace de jeu et refuge sécurisant pour votre petit chien. Fabriqué à la main en tissu premium résistant, ses parois hautes et sa base souple procurent un environnement stimulant et rassurant.",
     details: {
@@ -211,8 +211,8 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     images: [
       DC("2023/10/cordo-coussin-velours-pour-chien-min.jpg"),
+      DC("2025/01/MC_2307_cord_01_low-res_36bf735b-68f6-41ae-9049-0aab4580cb34-600x600.webp"),
       PX(8434633),
-      PX(5240579),
     ],
     description: "Le coussin CORDO en velours côtelé est l'accessoire quotidien par excellence. Sa structure ergonomique et son rembourrage en fibres recyclées offrent un soutien orthopédique optimal. Le velours côtelé, doux et résistant, est décliné en 8 coloris intemporels.",
     details: {
@@ -235,8 +235,8 @@ export const products: Product[] = [
     sizes: ["S", "M", "L"],
     images: [
       DC("2021/08/LABBVENN-FOSSER-2.jpg"),
+      DC("2021/08/LABBVENN-FOSSER-2.jpg"),
       PX(15347392),
-      PX(6679995),
     ],
     description: "Le tapis FOSSER de Labbvenn est le compagnon de voyage idéal. Imperméable, anti-dérapant, ultra-léger et pliable en quelques secondes. Il se glisse dans n'importe quel sac et offre à votre chien une surface confortable partout : voiture, hôtel, chez des amis.",
     details: {
@@ -259,10 +259,10 @@ export const products: Product[] = [
     sizes: ["Unique"],
     images: [
       DC("2024/04/RAMPE-DESIGN-POUR-CHIEN-ET-CHAT-DOGBEAM.jpg"),
+      DC("2024/04/RAMPE-DESIGN-POUR-CHIEN-ET-CHAT-DOGBEAM.jpg"),
       PX(16168081),
-      PX(15347392),
     ],
-    description: "La rampe DOGBEAM est pensée pour les chiens et chats qui ont du mal à monter sur le canapé ou le lit. Structure en bois massif laqué, surface antidérapante en textile, inclinaison optimale pour les petites et grandes races. Un accessoire quotidien indispensable habillé en meuble design.",
+    description: "La rampe DOGBEAM est pensée pour les chiens et chats qui ont du mal à monter sur le canapé ou le lit. Structure en bois massif laqué, surface antidérapante en textile, inclinaison optimale. Un accessoire quotidien indispensable habillé en meuble design.",
     details: {
       dimensions: "90 × 30 cm × H 40 cm",
       matiere: "Bois massif laqué + textile antidérapant",
@@ -283,8 +283,8 @@ export const products: Product[] = [
     sizes: ["S", "M", "L"],
     images: [
       DC("2025/01/MC_C02-020-02_Sleep_Senso_BoxBed_Pebble-Merle1-600x600.webp"),
+      DC("2025/01/MC_C02-020-02_Sleep_Senso_BoxBed_Pebble-Merle1-600x600.webp"),
       PX(866496),
-      PX(8434633),
     ],
     description: "Le panier Box SENSO de Miacara allie praticité et élégance pour le quotidien. Ses parois rigides et son fond moelleux créent un espace définissable que votre animal peut s'approprier facilement. Idéal pour structurer l'espace de vie de votre compagnon tout au long de la journée.",
     details: {

@@ -18,10 +18,9 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group bg-white">
-      {/* Image */}
       <Link
         href={`/produit/${product.slug}`}
-        className="block relative overflow-hidden bg-[#F8F5F0]"
+        className="block relative overflow-hidden bg-white"
         style={{ aspectRatio: "1/1" }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -36,25 +35,23 @@ export default function ProductCard({ product }: { product: Product }) {
           src={product.images[0]}
           alt={product.name}
           fill
-          className={`object-contain p-4 transition-all duration-700 ${hovered ? "opacity-0 scale-[1.04]" : "opacity-100 scale-100"}`}
+          className={`object-cover transition-all duration-700 ${hovered ? "opacity-0 scale-[1.04]" : "opacity-100 scale-100"}`}
           unoptimized
         />
         <Image
           src={img2}
           alt={product.name}
           fill
-          className={`object-contain p-4 absolute inset-0 transition-all duration-700 ${hovered ? "opacity-100 scale-[1.04]" : "opacity-0 scale-100"}`}
+          className={`object-cover absolute inset-0 transition-all duration-700 ${hovered ? "opacity-100 scale-[1.04]" : "opacity-0 scale-100"}`}
           unoptimized
         />
 
-        {/* Overlay hover */}
         <div className={`absolute inset-x-0 bottom-0 bg-[#0d0d0d]/85 py-3.5 flex items-center justify-center gap-2 transition-all duration-300 ${hovered ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
           <span className="text-white text-[10px] font-semibold tracking-[0.18em] uppercase">Voir le produit</span>
           <ArrowRight size={12} className="text-white" />
         </div>
       </Link>
 
-      {/* Info */}
       <div className="pt-3 pb-5">
         <Link href={`/produit/${product.slug}`}>
           <p className="text-[#0d0d0d] text-[12px] font-medium leading-snug line-clamp-2 hover:opacity-60 transition-opacity tracking-wide">

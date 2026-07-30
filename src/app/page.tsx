@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] flex flex-col justify-center items-center overflow-hidden">
         <Image
-          src="/img-brand-2.webp"
+          src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1920&auto=format&fit=crop&q=80"
           alt="Cocon Animal"
           fill
           className="object-cover object-center"
@@ -117,7 +117,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 min-h-[480px]">
             <div className="relative min-h-[320px] md:min-h-full overflow-hidden">
               <Image
-                src="/img-brand-1-cleanup.webp"
+                src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=900&auto=format&fit=crop&q=80"
                 alt="Confort & Repos"
                 fill
                 className="object-cover object-center"
@@ -191,7 +191,7 @@ export default function HomePage() {
             </div>
             <div className="relative min-h-[320px] md:min-h-full overflow-hidden order-1 md:order-2">
               <Image
-                src="/img-brand-3.webp"
+                src="https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=900&auto=format&fit=crop&q=80"
                 alt="Jeux & Éveil"
                 fill
                 className="object-cover object-center"
@@ -207,7 +207,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 min-h-[480px]">
             <div className="relative min-h-[320px] md:min-h-full overflow-hidden">
               <Image
-                src="/img-brand-2.webp"
+                src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&auto=format&fit=crop&q=80"
                 alt="Quotidien & Soins"
                 fill
                 className="object-cover object-center"

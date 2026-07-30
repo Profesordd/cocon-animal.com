@@ -13,25 +13,29 @@ interface CartDrawerProps {
 export default function CartDrawer({ open, onClose }: CartDrawerProps) {
   const { items, removeItem, updateQuantity, total } = useCart();
 
+  if (!open) return null;
+
   return (
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/40 z-[55] transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={onClose}
+        style={{ animation: "fadeInBg 0.2s ease forwards" }}
+        className="fixed inset-0 bg-black/50 z-[55]"
       />
 
-      {/* Drawer — inset-0 sur mobile (plein écran), right panel sur sm+ */}
+      {/* Panel — plein écran mobile, panneau latéral sm+ */}
       <aside
-        style={{ transition: "transform 0.3s ease" }}
-        className={`fixed inset-0 sm:left-auto sm:max-w-sm bg-white z-[60] flex flex-col shadow-2xl ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
+        style={{ animation: "slideInRight 0.3s ease forwards" }}
+        className="fixed inset-0 sm:left-auto sm:max-w-sm bg-white z-[60] flex flex-col shadow-2xl"
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#E4DDD4] flex-shrink-0">
           <h2 className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#0d0d0d]">
-            Mon panier{items.length > 0 && <span className="text-[#9A9591] font-normal ml-1">({items.length})</span>}
+            Mon panier
+            {items.length > 0 && (
+              <span className="text-[#9A9591] font-normal ml-1">({items.length})</span>
+            )}
           </h2>
           <button onClick={onClose} className="text-[#9A9591] hover:text-[#0d0d0d] transition-colors">
             <X size={18} strokeWidth={1.5} />
@@ -44,7 +48,10 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
             <div className="flex flex-col items-center text-center pt-16">
               <ShoppingCart size={36} strokeWidth={1} className="text-[#E4DDD4] mb-5" />
               <p className="text-[#9A9591] text-sm tracking-wide">Votre panier est vide</p>
-              <button onClick={onClose} className="mt-5 text-[10px] font-semibold tracking-[0.15em] uppercase text-[#0d0d0d] underline underline-offset-4">
+              <button
+                onClick={onClose}
+                className="mt-5 text-[10px] font-semibold tracking-[0.15em] uppercase text-[#0d0d0d] underline underline-offset-4"
+              >
                 Continuer mes achats
               </button>
             </div>
@@ -60,15 +67,24 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
                   <p className="text-[#0d0d0d] font-bold text-sm mt-1">{item.price.toFixed(2)} €</p>
                   <div className="flex items-center gap-2 mt-2">
                     <div className="flex items-center border border-[#E4DDD4]">
-                      <button onClick={() => updateQuantity(item.productSlug, item.size, item.quantity - 1)} className="w-7 h-7 flex items-center justify-center text-[#9A9591] hover:text-[#0d0d0d]">
+                      <button
+                        onClick={() => updateQuantity(item.productSlug, item.size, item.quantity - 1)}
+                        className="w-7 h-7 flex items-center justify-center text-[#9A9591] hover:text-[#0d0d0d]"
+                      >
                         <Minus size={10} />
                       </button>
                       <span className="w-6 text-center text-[12px] text-[#0d0d0d]">{item.quantity}</span>
-                      <button onClick={() => updateQuantity(item.productSlug, item.size, item.quantity + 1)} className="w-7 h-7 flex items-center justify-center text-[#9A9591] hover:text-[#0d0d0d]">
+                      <button
+                        onClick={() => updateQuantity(item.productSlug, item.size, item.quantity + 1)}
+                        className="w-7 h-7 flex items-center justify-center text-[#9A9591] hover:text-[#0d0d0d]"
+                      >
                         <Plus size={10} />
                       </button>
                     </div>
-                    <button onClick={() => removeItem(item.productSlug, item.size)} className="ml-auto text-[#E4DDD4] hover:text-red-400 transition-colors">
+                    <button
+                      onClick={() => removeItem(item.productSlug, item.size)}
+                      className="ml-auto text-[#E4DDD4] hover:text-red-400 transition-colors"
+                    >
                       <Trash2 size={13} />
                     </button>
                   </div>

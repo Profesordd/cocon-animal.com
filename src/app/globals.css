@@ -36,6 +36,20 @@ body {
   width: max-content;
 }
 
+/* Cart & menu animations */
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slideInDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 /* Fade in */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(22px); }

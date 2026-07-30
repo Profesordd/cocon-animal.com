@@ -23,8 +23,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="sticky z-30 bg-white border-b border-[#E4DDD4]"
-        style={{ top: "36px" }}
+        className="sticky top-9 z-30 bg-white border-b border-[#E4DDD4]"
       >
         <div className="max-w-7xl mx-auto px-6 h-16 grid grid-cols-3 items-center">
           {/* Nav gauche — desktop */}

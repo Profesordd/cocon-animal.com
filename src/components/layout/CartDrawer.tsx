@@ -20,7 +20,8 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
         onClick={onClose}
       />
       <aside
-        className={`fixed top-0 right-0 h-full w-full max-w-sm bg-white z-50 flex flex-col shadow-2xl transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 w-full max-w-sm bg-white z-50 flex flex-col shadow-2xl transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
+        style={{ height: "100dvh" }}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#E4DDD4]">

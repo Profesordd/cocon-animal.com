@@ -118,7 +118,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 min-h-[560px]">
             <div className="relative min-h-[400px] md:min-h-full overflow-hidden">
               <Image
-                src="https://dog-and-cat-design.com/wp-content/uploads/2021/12/LABBVENN-TOSSE2.jpg"
+                src="https://dog-and-cat-design.com/wp-content/uploads/2015/02/Covooooo-600x600.webp"
                 alt="Confort & Repos"
                 fill
                 className="object-cover object-center"

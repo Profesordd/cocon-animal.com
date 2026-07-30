@@ -11,17 +11,17 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="relative h-screen flex items-end overflow-hidden">
+      <section className="relative h-screen flex items-center md:items-end overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1920&q=85"
           alt="Cocon Animal"
           fill
-          className="object-cover object-center"
+          className="object-cover object-top md:object-center"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10" />
 
-        <div className="relative z-10 px-8 md:px-16 lg:px-24 pb-16 md:pb-28 w-full max-w-4xl">
+        <div className="relative z-10 px-8 md:px-16 lg:px-24 pb-0 md:pb-28 w-full max-w-4xl">
           <p className="fade-in-up d200 text-[9px] font-semibold tracking-[0.35em] uppercase text-white/50 mb-7">
             Cocon Animal — Collection 2025
           </p>
@@ -237,36 +237,6 @@ export default function HomePage() {
               <p className="text-[#7A746C] text-xs leading-relaxed">{v.desc}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── AVIS CLIENTS ─────────────────────────────────────────── */}
-      <section className="bg-[#F8F5F0] border-y border-[#E4DDD4] py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8933F] mb-3">Témoignages</p>
-            <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-black text-[#0d0d0d]">Ce qu'ils en pensent</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: "Marie-Claire L.", loc: "Paris", note: "L'arbre à chat THE ONE est une sculpture à part entière. Mon chat l'adore depuis le premier jour, et mes invités demandent toujours où je l'ai trouvé.", stars: 5 },
-              { name: "Julien R.", loc: "Lyon", note: "Le panier Classic de Bowl & Bone est vraiment haut de gamme. Mon labrador l'a adopté immédiatement. La qualité des matériaux est visible dès le déballage.", stars: 5 },
-              { name: "Sophie M.", loc: "Bordeaux", note: "La couverture TÖSSE est incroyablement douce. Mes chats se battent pour l'avoir. Livraison soignée, emballage parfait — un vrai service premium.", stars: 5 },
-            ].map((r) => (
-              <div key={r.name} className="bg-white p-7 border border-[#E4DDD4]">
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: r.stars }).map((_, i) => (
-                    <Star key={i} size={12} className="fill-[#B8933F] text-[#B8933F]" />
-                  ))}
-                </div>
-                <p className="text-[#0d0d0d] text-sm leading-relaxed mb-5">"{r.note}"</p>
-                <div>
-                  <p className="text-[11px] font-bold tracking-wide text-[#0d0d0d]">{r.name}</p>
-                  <p className="text-[#7A746C] text-[10px]">{r.loc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

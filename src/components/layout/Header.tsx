@@ -22,9 +22,7 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className="sticky top-9 z-30 bg-white border-b border-[#E4DDD4]"
-      >
+      <header className="sticky top-9 z-30 bg-white border-b border-[#E4DDD4]">
         <div className="max-w-7xl mx-auto px-6 h-16 grid grid-cols-3 items-center">
           {/* Nav gauche — desktop */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -80,22 +78,22 @@ export default function Header() {
             {/* Burger mobile */}
             <button
               className="lg:hidden text-[#0d0d0d] hover:opacity-60"
-              onClick={() => setMenuOpen((v) => !v)}
+              onClick={() => setMenuOpen(true)}
             >
-              {menuOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+              <Menu size={20} strokeWidth={1.5} />
             </button>
           </div>
         </div>
-
       </header>
 
-      {/* Menu mobile — overlay plein écran */}
+      {/* Menu mobile — plein écran, glisse depuis le haut */}
       <div
-        className={`fixed inset-0 z-50 bg-white flex flex-col lg:hidden transition-opacity duration-200 ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        style={{ transition: "transform 0.3s ease" }}
+        className={`fixed inset-0 z-[60] bg-white flex flex-col lg:hidden ${
+          menuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="flex items-center justify-between px-6 h-[calc(36px+64px)] border-b border-[#E4DDD4]">
+        <div className="flex items-center justify-between px-6 h-16 border-b border-[#E4DDD4] mt-9">
           <Link
             href="/"
             className="text-[14px] font-black tracking-[0.25em] uppercase text-[#0d0d0d]"
@@ -107,7 +105,7 @@ export default function Header() {
             <X size={20} strokeWidth={1.5} />
           </button>
         </div>
-        <nav className="flex-1 px-6 py-6 overflow-y-auto">
+        <nav className="flex-1 px-6 py-4 overflow-y-auto">
           {[...navLeft, ...navRight].map((l) => (
             <Link
               key={l.label}

@@ -15,16 +15,21 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
 
   return (
     <>
+      {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-black/40 z-[55] transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={onClose}
       />
+
+      {/* Drawer — inset-0 sur mobile (plein écran), right panel sur sm+ */}
       <aside
-        className={`fixed top-0 right-0 w-full sm:max-w-sm bg-white z-50 flex flex-col shadow-2xl transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
-        style={{ height: "100dvh" }}
+        style={{ transition: "transform 0.3s ease" }}
+        className={`fixed inset-0 sm:left-auto sm:max-w-sm bg-white z-[60] flex flex-col shadow-2xl ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-[#E4DDD4]">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-[#E4DDD4] flex-shrink-0">
           <h2 className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#0d0d0d]">
             Mon panier{items.length > 0 && <span className="text-[#9A9591] font-normal ml-1">({items.length})</span>}
           </h2>
@@ -36,7 +41,7 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
         {/* Articles */}
         <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5">
           {items.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-full text-center py-12">
+            <div className="flex flex-col items-center text-center pt-16">
               <ShoppingCart size={36} strokeWidth={1} className="text-[#E4DDD4] mb-5" />
               <p className="text-[#9A9591] text-sm tracking-wide">Votre panier est vide</p>
               <button onClick={onClose} className="mt-5 text-[10px] font-semibold tracking-[0.15em] uppercase text-[#0d0d0d] underline underline-offset-4">
@@ -75,7 +80,7 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="px-6 py-5 border-t border-[#E4DDD4] space-y-3 bg-[#F8F5F0]">
+          <div className="px-6 py-5 border-t border-[#E4DDD4] space-y-3 bg-[#F8F5F0] flex-shrink-0">
             <div className="flex justify-between text-[11px] text-[#9A9591]">
               <span>Livraison</span>
               <span className="text-green-700 font-semibold">Gratuite</span>

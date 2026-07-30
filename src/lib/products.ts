@@ -1,23 +1,46 @@
 import { Product } from "./types";
 
-const U = (id: string, w = 800) =>
-  `https://images.unsplash.com/${id}?w=${w}&auto=format&fit=crop&q=80`;
+const P = (id: number, w = 800) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
-// Photos chats
-const CAT_ORANGE   = U("photo-1543466835-00a7907e9de1");
-const CAT_GINGER   = U("photo-1514888286974-6c03e2ca1dba");
-const CAT_BASKET   = U("photo-1494256997604-768d1f608cac");
-const CAT_SLEEP    = U("photo-1548802673-380ab8ebc7b7");
-const CAT_LIE      = U("photo-1478098711619-5ab0b478d6e6");
-const CAT_FACE     = U("photo-1574158622682-e40e69881006");
-const CAT_PLAY     = U("photo-1518791841217-8f162f1912da");
-const CAT_CURIOUS  = U("photo-1596854407944-bf87f6fdd49e");
+// Photos arbres à chat / chats sur perchoir
+const CAT_TREE_1 = P(8619782);
+const CAT_TREE_2 = P(14208035);
+const CAT_TREE_3 = P(7330189);
+const CAT_TREE_4 = P(14799731);
+const CAT_TREE_5 = P(12314315);
 
-// Photos chiens
-const DOG_GOLDEN   = U("photo-1587300003388-59208cc962cb");
-const DOG_WALK     = U("photo-1548199973-03cce0bbc87b");
-const DOG_FIELD    = U("photo-1534361960057-19f073fcc599");
-const DOG_PORTRAIT = U("photo-1558788353-f76d92427f16");
+// Photos paniers / lits chats
+const CAT_BED_1 = P(866496);    // chat siamois douillet
+const CAT_BED_2 = P(64284);     // chaton cozy
+const CAT_BED_3 = P(5989336);   // chat dans panier
+const CAT_BED_4 = P(19518843);  // chat lit
+const CAT_BED_5 = P(17853112);  // chat repos
+const CAT_BED_6 = P(5240579);   // chat endormi
+
+// Photos jouets chats
+const CAT_TOY_1 = P(1340376);   // chat jouant
+const CAT_TOY_2 = P(6853522);   // chat avec jouet
+const CAT_TOY_3 = P(271611);    // chat et jouet
+const CAT_TOY_4 = P(19237486);  // chat actif
+const CAT_TOY_5 = P(7725967);   // chat tunnel/jeu
+
+// Photos gamelles / nourriture
+const DOG_BOWL_1 = P(8434633);  // gamelle chien
+const DOG_BOWL_2 = P(8473517);  // chien mange
+const DOG_BOWL_3 = P(8434637);  // gamelle inox
+const DOG_BOWL_4 = P(8473442);  // bol chien
+
+// Photos harnais / chiens
+const DOG_HARN_1 = P(15347392); // chien harnais
+const DOG_HARN_2 = P(16168081); // chien promenade
+const DOG_HARN_3 = P(6679995);  // chien harnais réglable
+const DOG_HARN_4 = P(15347387); // chien extérieur
+
+// Photos laisse / promenade
+const DOG_LEASH_1 = P(10994369); // chien laisse
+const DOG_LEASH_2 = P(7877091);  // chien promenade laisse
+const DOG_LEASH_3 = P(4317149);  // chien laisse parc
 
 export const products: Product[] = [
   // ── Collection 1 : Confort & Repos ──────────────────────────────
@@ -29,8 +52,8 @@ export const products: Product[] = [
     collection: "confort-repos",
     badge: "BESTSELLER",
     sizes: ["S", "M", "L"],
-    images: [CAT_ORANGE, CAT_GINGER, CAT_FACE],
-    description: "Arbre à chat robuste avec plateformes, griffoirs en sisal naturel et nichoir douillet. Idéal pour les chats actifs qui aiment grimper, griffer et observer.",
+    images: [CAT_TREE_1, CAT_TREE_2, CAT_TREE_3],
+    description: "Arbre à chat robuste avec plateformes, griffoirs en sisal naturel et nichoir douillet. Structure en panneaux MDF haute densité, recouvert de peluche douce. Idéal pour les chats actifs qui adorent grimper, griffer et observer leur environnement.",
     details: {
       dimensions: "50 × 50 × 120 cm (L)",
       matiere: "Bois MDF + peluche + sisal naturel",
@@ -49,8 +72,8 @@ export const products: Product[] = [
     collection: "confort-repos",
     badge: "NOUVEAU",
     sizes: ["S", "M", "L"],
-    images: [DOG_GOLDEN, DOG_FIELD, DOG_PORTRAIT],
-    description: "Coussin orthopédique en mousse à mémoire de forme pour soulager les articulations de votre chien. Housse déhoussable et lavable en machine.",
+    images: [DOG_HARN_2, DOG_HARN_4, DOG_HARN_3],
+    description: "Coussin orthopédique en mousse à mémoire de forme qui soulage les articulations et les muscles de votre chien. Housse en microfibre ultra-douce déhoussable et lavable en machine à 30°C. Base antidérapante pour éviter les glissades.",
     details: {
       dimensions: "60 × 45 cm (M)",
       matiere: "Mousse à mémoire de forme + microfibre",
@@ -69,8 +92,8 @@ export const products: Product[] = [
     collection: "confort-repos",
     badge: "NOUVEAU",
     sizes: ["S", "M"],
-    images: [CAT_BASKET, CAT_SLEEP, CAT_LIE],
-    description: "Panier ultra-doux en peluche longue avec bords rembourrés. Votre chat peut s'y lover confortablement. Fond antidérapant pour une stabilité totale.",
+    images: [CAT_BED_1, CAT_BED_2, CAT_BED_3],
+    description: "Panier ultra-doux en peluche longue avec bords rembourrés surélevés. Votre chat peut s'y lover confortablement, la tête appuyée sur les rebords. Fond antidérapant en tissu Oxford pour une stabilité totale sur tout type de sol.",
     details: {
       dimensions: "45 × 45 × 20 cm (M)",
       matiere: "Peluche longue + fond antidérapant",
@@ -89,8 +112,8 @@ export const products: Product[] = [
     collection: "confort-repos",
     badge: null,
     sizes: ["Unique"],
-    images: [CAT_LIE, CAT_CURIOUS, CAT_FACE],
-    description: "Hamac mural à fixer sur les radiateurs ou sous une fenêtre. Structure solide en métal, tissu résistant et confortable. Idéal pour les chats qui aiment observer.",
+    images: [CAT_BED_4, CAT_TREE_4, CAT_BED_5],
+    description: "Hamac mural à fixer sur les radiateurs ou sous une fenêtre grâce à ses crochets universels. Structure en métal peint, tissu Oxford résistant et confortable. Idéal pour les chats qui aiment se percher en hauteur et observer.",
     details: {
       dimensions: "55 × 38 cm",
       matiere: "Métal + tissu Oxford renforcé",
@@ -111,8 +134,8 @@ export const products: Product[] = [
     collection: "jeux-eveil",
     badge: "BESTSELLER",
     sizes: ["Unique"],
-    images: [CAT_PLAY, CAT_ORANGE, CAT_GINGER],
-    description: "Canne à pêche télescopique 60 cm avec plumes colorées et grelot. Stimule l'instinct chasseur de votre chat pour des sessions de jeu intenses et enrichissantes.",
+    images: [CAT_TOY_1, CAT_TOY_2, CAT_TOY_3],
+    description: "Canne à pêche télescopique 60 cm en plastique ABS solide, avec plumes naturelles colorées et grelot intégré. Le mouvement imprévisible des plumes stimule l'instinct chasseur de votre chat pour des sessions de jeu intenses et enrichissantes.",
     details: {
       dimensions: "60 cm déployée",
       matiere: "Plastique ABS + plumes naturelles",
@@ -131,8 +154,8 @@ export const products: Product[] = [
     collection: "jeux-eveil",
     badge: "NOUVEAU",
     sizes: ["Unique"],
-    images: [CAT_CURIOUS, CAT_PLAY, CAT_FACE],
-    description: "Tunnel en S avec 3 entrées, feuilles froissantes et fenêtre centrale. Se plie en un instant pour ranger. Parfait pour les chats qui adorent se cacher et bondir.",
+    images: [CAT_TOY_4, CAT_TOY_5, CAT_TREE_5],
+    description: "Tunnel en S avec 3 entrées, revêtement froissant crinkle qui attise la curiosité de votre chat, et judas central. Se plie en un clin d'œil pour un rangement facile. Parfait pour les chats qui adorent se cacher, bondir et surveiller.",
     details: {
       dimensions: "90 × 25 cm déployé",
       matiere: "Polyester renforcé + armature spiralée",
@@ -151,8 +174,8 @@ export const products: Product[] = [
     collection: "jeux-eveil",
     badge: null,
     sizes: ["S", "M", "L"],
-    images: [DOG_FIELD, DOG_GOLDEN, DOG_PORTRAIT],
-    description: "Corde de jeu en coton naturel tressé avec gros nœuds. Idéale pour les jeux de traction, les mordillements et le renforcement de la relation maître-chien.",
+    images: [DOG_HARN_1, DOG_HARN_3, DOG_LEASH_1],
+    description: "Corde de jeu en coton naturel tressé avec gros nœuds aux extrémités. Résistante aux mordillements et aux jeux de traction les plus intenses. Idéale pour renforcer le lien maître-chien et occuper votre compagnon.",
     details: {
       dimensions: "40 cm (M)",
       matiere: "Coton naturel tressé",
@@ -171,8 +194,8 @@ export const products: Product[] = [
     collection: "jeux-eveil",
     badge: null,
     sizes: ["Unique"],
-    images: [DOG_PORTRAIT, DOG_FIELD, DOG_GOLDEN],
-    description: "Balle en caoutchouc naturel avec ouverture réglable pour y glisser des friandises. Stimule l'intelligence de votre chien et l'occupe pendant de longues heures.",
+    images: [DOG_LEASH_2, DOG_LEASH_3, DOG_HARN_2],
+    description: "Balle en caoutchouc naturel non toxique avec ouverture réglable pour y glisser des friandises. Chaque roulement libère une récompense et stimule l'intelligence de votre chien. Idéale pour l'occuper seul ou en jeu de recherche.",
     details: {
       dimensions: "Ø 8 cm",
       matiere: "Caoutchouc naturel non toxique",
@@ -193,11 +216,11 @@ export const products: Product[] = [
     collection: "quotidien-soins",
     badge: "BESTSELLER",
     sizes: ["S", "M", "L"],
-    images: [CAT_GINGER, CAT_BASKET, CAT_ORANGE],
-    description: "Set de 2 gamelles en inox 304 alimentaire avec support surélevé en bois et semelles antidérapantes. Design épuré, facile à nettoyer, résistant à la rouille.",
+    images: [DOG_BOWL_1, DOG_BOWL_2, DOG_BOWL_3],
+    description: "Set de 2 gamelles en inox 304 alimentaire certifié, montées sur un support surélevé en bois naturel avec semelles en silicone antidérapantes. Design épuré, résistant à la rouille et compatible lave-vaisselle. Pour chats et chiens.",
     details: {
       dimensions: "Support 30 × 15 × 10 cm (M)",
-      matiere: "Inox 304 + bois naturel",
+      matiere: "Inox 304 + bois naturel + silicone",
       poids: "400 g",
       convient_pour: "Chats et chiens",
       entretien: "Compatible lave-vaisselle",
@@ -213,8 +236,8 @@ export const products: Product[] = [
     collection: "quotidien-soins",
     badge: "PREMIUM",
     sizes: ["Unique"],
-    images: [CAT_SLEEP, CAT_FACE, CAT_LIE],
-    description: "Fontaine filtrante 2,5L ultra-silencieuse avec triple filtration au charbon actif. Incite votre animal à boire plus et prévient les problèmes rénaux.",
+    images: [CAT_BED_6, DOG_BOWL_4, CAT_BED_3],
+    description: "Fontaine à eau silencieuse 2,5L avec triple filtration au charbon actif, mousse et coton. Maintient une eau fraîche et oxygénée en permanence pour encourager votre animal à boire davantage. Pompe ultra-silencieuse <30dB. Compatible chats et chiens.",
     details: {
       dimensions: "22 × 18 × 20 cm",
       matiere: "ABS alimentaire + filtre charbon actif",
@@ -233,8 +256,8 @@ export const products: Product[] = [
     collection: "quotidien-soins",
     badge: null,
     sizes: ["XS", "S", "M", "L", "XL"],
-    images: [DOG_WALK, DOG_GOLDEN, DOG_FIELD],
-    description: "Harnais en nylon respirant avec boucles de sécurité renforcées et poignée dorsale. Réglable sur 5 points pour un confort optimal. Anneau de laisse inox.",
+    images: [DOG_HARN_1, DOG_HARN_2, DOG_HARN_4],
+    description: "Harnais en nylon respirant avec boucles de sécurité renforcées, poignée dorsale et bandes réfléchissantes. Réglable sur 4 points pour un ajustement parfait. Anneau en inox pour attacher la laisse. Conçu pour les chiens de toutes races.",
     details: {
       dimensions: "Tour de poitrail 40–55 cm (M)",
       matiere: "Nylon respirant + boucles polypropylène",
@@ -253,8 +276,8 @@ export const products: Product[] = [
     collection: "quotidien-soins",
     badge: null,
     sizes: ["S", "M", "L"],
-    images: [DOG_WALK, DOG_PORTRAIT, DOG_FIELD],
-    description: "Laisse rétractable 5m avec mécanisme frein-blocage et poignée ergonomique antidérapante. Câble résistant. Idéale pour les promenades en liberté contrôlée.",
+    images: [DOG_LEASH_1, DOG_LEASH_2, DOG_LEASH_3],
+    description: "Laisse rétractable 5m avec mécanisme frein-blocage instantané et poignée ergonomique antidérapante. Câble en nylon renforcé, crochet pivotant en inox. Bouton de blocage accessible au pouce. Idéale pour les promenades en liberté contrôlée.",
     details: {
       dimensions: "5 m de longueur",
       matiere: "ABS + câble nylon renforcé",

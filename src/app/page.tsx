@@ -192,7 +192,7 @@ export default function HomePage() {
             </div>
             <div className="relative min-h-[360px] md:min-h-full overflow-hidden order-1 md:order-2">
               <Image
-                src="https://images.pexels.com/photos/1340376/pexels-photo-1340376.jpeg?auto=compress&cs=tinysrgb&w=900"
+                src="https://dog-and-cat-design.com/wp-content/uploads/2021/08/coco-chien-labbvenn-1.jpg"
                 alt="Jeux & Éveil"
                 fill
                 className="object-cover object-center"
@@ -208,7 +208,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 min-h-[520px]">
             <div className="relative min-h-[360px] md:min-h-full overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/8434633/pexels-photo-8434633.jpeg?auto=compress&cs=tinysrgb&w=900"
+                src="https://dog-and-cat-design.com/wp-content/uploads/2019/04/dog-bed-classic-graphite-bowlandbonerepublic-l1-600x534.webp"
                 alt="Quotidien & Soins"
                 fill
                 className="object-cover object-center"

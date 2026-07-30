@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 
 const messages = [
-  "🚚 Livraison gratuite en France — commandes jusqu'à 60€",
+  "🚚 Livraison gratuite en France — sans minimum d'achat",
   "🔄 Retours gratuits sous 30 jours",
-  "📞 Service client disponible 7j/7",
+  "🐾 Produits sélectionnés pour le bien-être de votre animal",
 ];
 
 export default function PromoBar() {

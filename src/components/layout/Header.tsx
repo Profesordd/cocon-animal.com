@@ -26,8 +26,8 @@ export default function Header() {
           {/* Logo image */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/logo.webp"
-              alt="Monra France"
+              src="/logo.svg"
+              alt="Cocon Animal"
               width={130}
               height={40}
               className="h-10 w-auto object-contain"

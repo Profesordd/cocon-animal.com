@@ -13,9 +13,9 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MONRA FRANCE — Jeans Homme Street Luxury",
+  title: "COCON ANIMAL — Accessoires & Bien-être pour Animaux",
   description:
-    "Jeans homme tendance. Livraison gratuite en France. L'uniforme de ceux qui ne s'arrêtent jamais.",
+    "Accessoires premium pour chats et chiens. Livraison gratuite en France. Tout ce qu'il faut pour le bonheur de votre compagnon.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

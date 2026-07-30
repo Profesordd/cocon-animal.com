@@ -6,23 +6,23 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "Quels sont vos délais de livraison ?",
-    answer: "Nous livrons en 5 à 7 jours ouvrés en France métropolitaine via La Poste. Vous recevrez votre numéro de suivi par email entre 16h et 20h le jour de l'expédition.",
+    answer: "Nous livrons en 5 à 7 jours ouvrés en France métropolitaine via La Poste. Vous recevrez votre numéro de suivi par email le jour de l'expédition.",
   },
   {
     question: "La livraison est-elle gratuite ?",
     answer: "Oui, la livraison est entièrement gratuite en France pour toutes les commandes, sans minimum d'achat.",
   },
   {
-    question: "Comment suivre ma commande ?",
-    answer: "Dès l'expédition de votre commande, vous recevrez un email avec votre numéro de suivi La Poste. Vous pouvez aussi utiliser la page « Suivre ma commande » sur notre site.",
+    question: "Comment choisir la bonne taille pour mon animal ?",
+    answer: "Chaque fiche produit indique les dimensions et le poids recommandé. En cas de doute entre deux tailles, privilégiez toujours la taille supérieure pour le confort de votre compagnon.",
   },
   {
     question: "Puis-je retourner un article ?",
-    answer: "Oui, vous disposez de 30 jours pour nous retourner un article. Les frais de retour sont entièrement pris en charge par Monra France. Contactez-nous à contact@monra-france.com pour initier un retour.",
+    answer: "Oui, vous disposez de 30 jours pour nous retourner un article. Les frais de retour sont entièrement pris en charge par Cocon Animal. Contactez-nous à contact@cocon-animal.com pour initier un retour.",
   },
   {
-    question: "Comment sont remboursés les retours ?",
-    answer: "Après réception et vérification de l'article, le remboursement est effectué sous 5 à 7 jours ouvrés sur votre moyen de paiement initial. Vous pouvez aussi choisir un échange.",
+    question: "Les produits sont-ils sécurisés pour les animaux ?",
+    answer: "Tous nos produits sont conformes aux normes européennes et fabriqués avec des matériaux non toxiques, testés pour un usage en contact direct avec les animaux.",
   },
   {
     question: "Les paiements sont-ils sécurisés ?",
@@ -36,7 +36,6 @@ function FAQItem({ faq, isOpen, onToggle }: {
   onToggle: () => void;
 }) {
   const contentRef = useRef<HTMLDivElement>(null);
-
   return (
     <div className="bg-white border-b border-gray-100 last:border-0">
       <button
@@ -67,18 +66,11 @@ function FAQItem({ faq, isOpen, onToggle }: {
 
 export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
-
   return (
     <div className="border border-gray-100 rounded-lg overflow-hidden">
       {faqs.map((faq, i) => (
-        <FAQItem
-          key={i}
-          faq={faq}
-          isOpen={openIndex === i}
-          onToggle={() => toggle(i)}
-        />
+        <FAQItem key={i} faq={faq} isOpen={openIndex === i} onToggle={() => toggle(i)} />
       ))}
     </div>
   );

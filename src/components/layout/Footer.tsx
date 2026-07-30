@@ -10,10 +10,10 @@ export default function Footer() {
           {/* Col 1 – Brand */}
           <div>
             <Link href="/" className="inline-block mb-3">
-              <Image src="/logo.webp" alt="Monra France" width={120} height={36} className="h-9 w-auto object-contain" />
+              <Image src="/logo.svg" alt="Cocon Animal" width={140} height={36} className="h-9 w-auto object-contain" />
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">
-              Street luxury parisien. Jeans homme tendance, livrés rapidement en France.
+              Accessoires premium pour chats et chiens. Livraison gratuite en France.
             </p>
             <div className="flex items-center gap-2">
               {["VISA", "MC", "CB"].map((c) => (
@@ -59,10 +59,10 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-gray-500 text-sm mb-2">
               <Mail size={14} />
               <a
-                href="mailto:contact@monra-france.com"
+                href="mailto:contact@cocon-animal.com"
                 className="hover:text-gray-900 transition-colors"
               >
-                contact@monra-france.com
+                contact@cocon-animal.com
               </a>
             </div>
             <p className="text-gray-400 text-sm mb-4">Service client 7j/7</p>
@@ -78,7 +78,7 @@ export default function Footer() {
 
       <div className="border-t border-gray-100 py-4 px-4">
         <p className="text-center text-gray-400 text-xs">
-          © 2025 Monra France — Tous droits réservés
+          © 2025 Cocon Animal — Tous droits réservés
         </p>
       </div>
     </footer>

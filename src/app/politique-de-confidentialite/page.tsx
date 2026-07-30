@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-export const metadata = { title: "Politique de Confidentialité — Monra France" };
+export const metadata = { title: "Politique de Confidentialité — Cocon Animal" };
 
 export default function PolitiqueConfidentialitePage() {
   return (
@@ -27,7 +27,7 @@ export default function PolitiqueConfidentialitePage() {
         </section>
         <section>
           <h2 className="text-sm font-bold text-gray-900 mb-1.5">Vos droits (RGPD)</h2>
-          <p>Vous disposez d'un droit d'accès, de rectification et d'effacement de vos données. Pour exercer ces droits : <a href="mailto:contact@monra-france.com" className="text-blue-600 hover:underline">contact@monra-france.com</a></p>
+          <p>Vous disposez d'un droit d'accès, de rectification et d'effacement de vos données. Pour exercer ces droits : <a href="mailto:contact@cocon-animal.com" className="text-blue-600 hover:underline">contact@cocon-animal.com</a></p>
         </section>
         <section>
           <h2 className="text-sm font-bold text-gray-900 mb-1.5">Cookies</h2>

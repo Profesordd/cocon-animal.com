@@ -18,16 +18,16 @@ const productFaq = [
     a: "Votre commande est expédiée sous 24-48h. La livraison en France métropolitaine prend 5 à 7 jours ouvrés via La Poste.",
   },
   {
-    q: "Comment choisir ma taille ?",
-    a: "Nous recommandons de prendre votre taille habituelle. En cas de doute entre deux tailles, prenez la plus grande. La coupe est conçue pour être confortable sans être trop ample.",
+    q: "Comment choisir la bonne taille pour mon animal ?",
+    a: "Référez-vous au guide des dimensions dans la fiche produit (poids et mensurations de votre animal). En cas de doute, choisissez la taille supérieure pour un confort optimal.",
   },
   {
-    q: "Puis-je retourner l'article s'il ne me convient pas ?",
-    a: "Oui, vous disposez de 30 jours pour retourner votre article. Les frais de retour sont entièrement pris en charge par Monra France.",
+    q: "Puis-je retourner l'article s'il ne convient pas ?",
+    a: "Oui, vous disposez de 30 jours pour retourner votre article. Les frais de retour sont entièrement pris en charge par Cocon Animal.",
   },
   {
-    q: "Comment entretenir mon jean ?",
-    a: "Lavage en machine à 30°C, à l'envers pour préserver la couleur. Ne pas utiliser de sèche-linge. Repassage à température modérée si nécessaire.",
+    q: "Les matériaux sont-ils sécurisés pour mon animal ?",
+    a: "Tous nos produits sont testés et conformes aux normes de sécurité européennes. Les matériaux sont non toxiques et adaptés à un contact quotidien avec les animaux.",
   },
 ];
 

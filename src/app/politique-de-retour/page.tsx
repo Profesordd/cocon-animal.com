@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-export const metadata = { title: "Politique de Retour — Monra France" };
+export const metadata = { title: "Politique de Retour — Cocon Animal" };
 
 export default function PolitiqueRetourPage() {
   return (
@@ -30,7 +30,7 @@ export default function PolitiqueRetourPage() {
         </section>
         <section>
           <h2 className="text-sm font-bold text-gray-900 mb-1.5">Frais de retour</h2>
-          <p>Les frais de retour sont entièrement pris en charge par Monra France. Vous ne payez rien.</p>
+          <p>Les frais de retour sont entièrement pris en charge par Cocon Animal. Vous ne payez rien.</p>
         </section>
         <section>
           <h2 className="text-sm font-bold text-gray-900 mb-1.5">Remboursement ou échange</h2>
@@ -38,7 +38,7 @@ export default function PolitiqueRetourPage() {
         </section>
         <section>
           <h2 className="text-sm font-bold text-gray-900 mb-1.5">Comment initier un retour ?</h2>
-          <p>Contactez-nous à <a href="mailto:contact@monra-france.com" className="text-blue-600 hover:underline">contact@monra-france.com</a> avec votre numéro de commande. Nous vous envoyons les instructions par email.</p>
+          <p>Contactez-nous à <a href="mailto:contact@cocon-animal.com" className="text-blue-600 hover:underline">contact@cocon-animal.com</a> avec votre numéro de commande. Nous vous envoyons les instructions par email.</p>
         </section>
       </div>
     </div>

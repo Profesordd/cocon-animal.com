@@ -1,10 +1,10 @@
 export interface ProductDetails {
-  coupe: string;
+  dimensions: string;
   matiere: string;
-  elasticite: string;
-  fermeture: string;
-  longueur: string;
-  epaisseur: string;
+  poids: string;
+  convient_pour: string;
+  entretien: string;
+  garantie: string;
 }
 
 export interface Product {
@@ -12,6 +12,7 @@ export interface Product {
   name: string;
   price: number;
   category: string;
+  collection: string;
   badge: string | null;
   sizes: string[];
   images: string[];

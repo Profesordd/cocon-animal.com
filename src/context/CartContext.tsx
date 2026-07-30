@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
 import { CartItem } from "@/lib/types";
 
-const CART_KEY = "monra_cart";
+const CART_KEY = "cocon_animal_cart";
 
 function loadCart(): CartItem[] {
   if (typeof window === "undefined") return [];

@@ -28,8 +28,8 @@ export default function ContactPage() {
               <Mail size={15} className="text-gray-400" />
               <p className="text-sm font-semibold text-gray-900">Email</p>
             </div>
-            <a href="mailto:contact@monra-france.com" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
-              contact@monra-france.com
+            <a href="mailto:contact@cocon-animal.com" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+              contact@cocon-animal.com
             </a>
           </div>
           <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">

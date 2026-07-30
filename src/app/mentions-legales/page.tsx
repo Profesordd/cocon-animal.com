@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-export const metadata = { title: "Mentions Légales — Monra France" };
+export const metadata = { title: "Mentions Légales — Cocon Animal" };
 
 export default function MentionsLegalesPage() {
   return (
@@ -28,7 +28,7 @@ export default function MentionsLegalesPage() {
         <section>
           <h2 className="text-base font-bold text-gray-900 mb-3">Propriété intellectuelle</h2>
           <p>
-            L'ensemble des contenus présents sur ce site (textes, images, logos) sont la propriété exclusive de Monra France
+            L'ensemble des contenus présents sur ce site (textes, images, logos) sont la propriété exclusive de Cocon Animal
             et sont protégés par les lois françaises et internationales relatives à la propriété intellectuelle.
             Toute reproduction, même partielle, est interdite sans autorisation préalable.
           </p>
@@ -37,8 +37,8 @@ export default function MentionsLegalesPage() {
         <section>
           <h2 className="text-base font-bold text-gray-900 mb-3">Responsabilité</h2>
           <p>
-            Monra France s'efforce d'assurer l'exactitude des informations diffusées sur le site mais ne peut garantir
-            leur exhaustivité ni leur exactitude à tout moment. Monra France se réserve le droit de modifier les contenus
+            Cocon Animal s'efforce d'assurer l'exactitude des informations diffusées sur le site mais ne peut garantir
+            leur exhaustivité ni leur exactitude à tout moment. Cocon Animal se réserve le droit de modifier les contenus
             à tout moment sans préavis.
           </p>
         </section>
